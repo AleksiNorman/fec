@@ -1,0 +1,48 @@
+.TH fec 1 "July 7, 2012"
+.SH NAME
+fec \- count files by extension
+.SH SYNOPSIS
+.B fec
+[OPTION]... [DIRECTORY]...
+.SH DESCRIPTION
+fec (abbr. File Extension Count) counts files by extension. The program operates on directory or directories specified on the command line. As default, it prints the inodes and space occupied for each extension.
+.SH OPTIONS
+.TP
+\-r, \-\-recursive
+be recursive (include sudirectories as well)
+.TP
+\-i, \-\-insensitive
+classify file extensions case-insensitively (eg. interpret avi and AVI to be the same extension)
+.TP
+\-h, \-\-human-readable
+print sizes in human readable format (eg. 32 kB, 2 MB)
+.TP
+\-L, \-\-dereference
+dereference symbolic links (see also: symlink(7))
+.TP
+\-\-count-links
+count links instead of inodes
+.TP
+\-q, \-\-quiet
+print only fatal errors
+.TP
+\-v, \-\-verbose
+turn on verbose output
+.TP
+\-d, \-\-debug
+turn on debug output
+.TP
+\-V, \-\-version
+print version
+.TP
+\-\-help
+print brief summary
+.SH EXAMPLES
+Count files and sizes by extension in the current folder: fec -h
+Count all files and sizes by extension in your home folder: fec -hr ~
+.SH EXIT STATUS
+fec returns zero if it manages to read the metadata of atleast one file. One is returned on failure.
+.SH AUTHOR
+Aleksi Norman
+.SH SEE ALSO
+du(1), ls(1)
